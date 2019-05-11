@@ -4,7 +4,7 @@ public abstract class Pieza {
     private Casilla casilla;
     private boolean esBlanco;
     private boolean movLegal;
-    private String nombre;
+    private char nombre;
     private boolean viva;
     public String PiezaX;
  
@@ -13,10 +13,10 @@ public abstract class Pieza {
 //        this.esBlanco = true;
 //        this.nombre = null;
 //    }
-    public Pieza( boolean blanco){
+    public Pieza( boolean blanco, char nombre){
        // this.casilla = casilla;
         this.esBlanco = blanco;
-        this.nombre = PiezaX;
+        this.nombre = nombre;
     }
     abstract public void mover();  
     public boolean verificarMovimiento(Posicion posicion){
@@ -29,7 +29,7 @@ public abstract class Pieza {
         
     }
     public String toString(){
-       return "Nombre" + nombre;
+       return " "+ nombre;
     }
     
     

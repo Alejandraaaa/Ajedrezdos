@@ -1,10 +1,11 @@
-public class Rey extends Pieza {
+public class Rey extends Pieza{
     private boolean estoyEnJaque;
     private boolean jaqueMate;
 
-    public Rey(boolean blanco) {
-        super(blanco);
+    public Rey( boolean blanco, char nombre) {
+        super(blanco,nombre);
     }
+
     public void verificar(){
         
     }
