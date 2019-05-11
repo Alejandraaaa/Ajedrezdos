@@ -5,6 +5,10 @@ public class Rey extends Pieza {
     public Rey(boolean blanco) {
         super(blanco);
     }
+    public void verificar(){
+        
+    }
+    
 
     
     @Override

@@ -3,11 +3,10 @@ public class Casilla {
     private Posicion posicion;
     //private boolean esVacia;
 
-    public Casilla(Posicion posicion) {
-        this.posicion = posicion;
-        this.pieza = null;
+    public Casilla() {
         
     }
+
 
     public Pieza getPieza() {
         return pieza;
@@ -15,6 +14,9 @@ public class Casilla {
 
     public Posicion getPosicion() {
         return posicion;
+    }
+    public void ponerPieza(Pieza pieza){
+        this.pieza = pieza;
     }
 
 //    public void setPieza(Pieza pieza) {

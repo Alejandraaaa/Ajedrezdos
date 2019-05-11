@@ -6,16 +6,21 @@ public abstract class Pieza {
     private boolean movLegal;
     private String nombre;
     private boolean viva;
-    
+    public String PiezaX;
  
-
+//    public Pieza(){
+//       // this.casilla = casilla;
+//        this.esBlanco = true;
+//        this.nombre = null;
+//    }
     public Pieza( boolean blanco){
        // this.casilla = casilla;
         this.esBlanco = blanco;
+        this.nombre = PiezaX;
     }
     abstract public void mover();  
     public boolean verificarMovimiento(Posicion posicion){
-     
+    
         return movLegal;
      
     }  
@@ -23,6 +28,10 @@ public abstract class Pieza {
         
         
     }
+    public String toString(){
+       return "Nombre" + nombre;
+    }
+    
     
     
 }
