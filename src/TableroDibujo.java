@@ -11,18 +11,18 @@ public class TableroDibujo extends javax.swing.JFrame {
     }
     public void setBotones(){
         tablero = new JButton[8][8];
-        int x = 5;
-        int y = 5;
+        int x = 10;
+        int y = 10;
         for (int i = 0; i < 8; i++) {
             for (int j = 0; j < 8; j++) {
                 tablero[i][j] = new JButton();
                 tablero[i][j].setBackground(java.awt.Color.green);
-                tablero[i][j].setBounds(x, y, 50, 50);
+                tablero[i][j].setBounds(x, y, 80, 80);
                 ajedrez.add(tablero[i][j]);
-                y+=10;
+                y+=80;
             }
-            x+=30;
-            y=100;
+            x+=80;
+            y=10;
             
         }
                  
