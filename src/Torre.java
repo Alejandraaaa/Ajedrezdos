@@ -5,9 +5,10 @@ public class Torre extends Pieza {
     }
 
     public void mover(Casilla casilla) {
-        int primerCoordenada = this.getCasilla().getPosicion().getX();
-        int segundaCoordenada = this.getCasilla().getPosicion().getY();
+        int primerCoordenada = this.conseguirCasilla().getPosicion().getX();
+        int segundaCoordenada = this.conseguirCasilla().getPosicion().getY();
         Posicion posicion = new Posicion(primerCoordenada, segundaCoordenada);
+        for()
         
         casilla.moverPieza(casilla);
         

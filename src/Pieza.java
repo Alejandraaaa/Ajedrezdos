@@ -31,7 +31,8 @@ public abstract class Pieza {
        return " "+ nombre;
     }
 
-    public Casilla getCasilla() {
+    public Casilla conseguirCasilla() {
+        
         return casilla;
     }
 
