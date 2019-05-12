@@ -7,7 +7,7 @@ public class Torre extends Pieza {
     public void comer(){
         
     }
-    public void mover(Casilla[][] arreglo, Casilla casillaFinal) {
+    public void mover(Casilla[][] arreglo, Casilla casillaFinal) throws IllegalMovException {
         int coordenadaInicial = this.conseguirMiCasilla(arreglo).conseguirX(arreglo);
         int coordenadaInicialDos = this.conseguirMiCasilla(arreglo).conseguirY(arreglo);
         int coordenadaFinal = casillaFinal.conseguirX(arreglo);
