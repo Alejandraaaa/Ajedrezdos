@@ -6,12 +6,8 @@ public class Dama extends Pieza {
 
     @Override
     public void mover() {
-        
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-    public void comer(){
-        
-    }
-    
         
     
 }

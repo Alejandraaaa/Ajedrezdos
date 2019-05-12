@@ -6,7 +6,6 @@ public abstract class Pieza {
     private boolean movLegal;
     private char nombre;
     private boolean viva;
-    public String PiezaX;
  
 //    public Pieza(){
 //       // this.casilla = casilla;
@@ -31,7 +30,35 @@ public abstract class Pieza {
     public String toString(){
        return " "+ nombre;
     }
-    
-    
-    
-}
+
+    public Casilla getCasilla() {
+        return casilla;
+    }
+
+    public boolean isEsBlanco() {
+        return esBlanco;
+    }
+
+    public boolean isMovLegal() {
+        return movLegal;
+    }
+
+    public char getNombre() {
+        return nombre;
+    }
+
+    public boolean isViva() {
+        return viva;
+    }
+    public void setMoverPieza(){
+        
+        
+    }
+//        tablero[2][5].ponerPieza(tablero[0][5].getPieza());
+//        
+////        pieza = tablero[7][0].getPieza();
+////        ((Torre)pieza).mover(tablero[2][8]);
+////        ((Torre)pieza.   
+//        System.out.println(tablero[2][5].getPieza());
+////        System.out.println(pieza.isEsBlanco());
+    }

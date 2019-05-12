@@ -20,23 +20,44 @@ class Tablero {
     tablero[0][5].ponerPieza(new Alfil(false, 'A'));
     tablero[0][6].ponerPieza(new Caballo(false, 'C'));
     tablero[0][7].ponerPieza(new Torre(false, 'T'));
-    for(int i=0; i<8; ++i)
+    for(int i=0; i<8; i++)
         tablero[1][i].ponerPieza(new Peon(false, 'P'));  
+    
+    // Poner las piezas blancas
+    tablero[7][0].ponerPieza(new Torre(true,'T'));
+    tablero[7][1].ponerPieza(new Caballo(true, 'C'));
+    tablero[7][2].ponerPieza(new Alfil(true, 'A'));
+    tablero[7][3].ponerPieza(new Rey(true, 'R'));
+    tablero[7][4].ponerPieza(new Dama(true,'D'));
+    tablero[7][5].ponerPieza(new Alfil(true, 'A'));
+    tablero[7][6].ponerPieza(new Caballo(true, 'C'));
+    tablero[7][7].ponerPieza(new Torre(true, 'T'));
+    for(int i=0; i<8; i++)
+        tablero[6][i].ponerPieza(new Peon(true, 'P'));
+    
+    }
+    public void voltearTablero(){
+    
     }
     
     
     @Override
     public String toString(){
-        String tablero = "";//Creamos un valor cadena vacía. 
-        for(int i = 0; i < this.tablero.length; i++){//Recorremos los valores de las filas.
-            for(int j = 0; j < this.tablero[i].length; j++){//Recorremos los valores de las columnas. 
+        String tablero = ""; 
+        for(int i = 0; i < this.tablero.length; i++){
+            for(int j = 0; j < this.tablero[i].length; j++){ 
                 Pieza piezaDelaCasilla = this.tablero[i][j].getPieza();
                 tablero += piezaDelaCasilla + "  "; 
             }
             
-            tablero += "\n"; //Con cada arreglo convertido en cadena damos un salto de linea. 
+            tablero += "\n";
         }
         return tablero;
     }
+
+    public Casilla[][] getTablero() {
+        return tablero;
+    }
+    
 }
 
