@@ -47,7 +47,7 @@ class Tablero {
         for(int i = 0; i < this.tablero.length; i++){
             for(int j = 0; j < this.tablero[i].length; j++){ 
                 Pieza piezaDelaCasilla = this.tablero[i][j].getPieza();
-                tablero += piezaDelaCasilla + "  "; 
+                tablero += "["+ piezaDelaCasilla + " ] "; 
             }
             
             tablero += "\n";

@@ -1,41 +1,19 @@
 public abstract class Pieza {
-    //private Posicion posicion;
-   // private Tablero tablero;
     private Casilla casilla;
     private boolean esBlanco;
     private boolean movLegal;
     private char nombre;
     private boolean viva;
- 
-//    public Pieza(){
-//       // this.casilla = casilla;
-//        this.esBlanco = true;
-//        this.nombre = null;
-//    }
     public Pieza( boolean blanco, char nombre){
-       // this.casilla = casilla;
         this.esBlanco = blanco;
         this.nombre = nombre;
     }
     abstract public void mover();  
-    public boolean verificarMovimiento(Posicion posicion){
-    
-        return movLegal;
-     
-    }  
+    abstract public void verificarMovimiento(Posicion posicion);
     public void comer(Casilla casilla){
         
         
     }
-    public String toString(){
-       return " "+ nombre;
-    }
-
-    public Casilla conseguirCasilla() {
-        
-        return casilla;
-    }
-
     public boolean isEsBlanco() {
         return esBlanco;
     }
@@ -51,15 +29,21 @@ public abstract class Pieza {
     public boolean isViva() {
         return viva;
     }
-    public void setMoverPieza(){
-        
+    public Casilla conseguirMiCasilla(Casilla[][] arreglo){//Revisar si conviene que sea arreglo o tablero
+        Casilla miCasilla = null;
+        for (int i = 0; i < arreglo.length; i++) {
+            for (int j = 0; j < arreglo[i].length; j++) {   
+                if (this == arreglo[i][j].getPieza()){ 
+                    miCasilla = arreglo[i][j];
+                }          
+            }
+        }
+        return miCasilla;
         
     }
-//        tablero[2][5].ponerPieza(tablero[0][5].getPieza());
-//        
-////        pieza = tablero[7][0].getPieza();
-////        ((Torre)pieza).mover(tablero[2][8]);
-////        ((Torre)pieza.   
-//        System.out.println(tablero[2][5].getPieza());
-////        System.out.println(pieza.isEsBlanco());
+    public String toString(){
+    return " "+ nombre;
     }
+}
+    
+

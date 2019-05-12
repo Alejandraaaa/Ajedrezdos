@@ -24,20 +24,36 @@ public class Casilla {
     }
     
 
-    public Posicion getPosicion() {
-        return posicion;
+    public int conseguirX(Casilla [][] arreglo) {
+        int y =0;
+        for (int i = 0; i < arreglo.length; i++) {
+            for (int j = 0; j < arreglo[i].length; j++) {   
+                if (this == arreglo[i][j]){
+                y = j;
+                }             
+            }
+        }
+        return y;
     }
-    public void ponerPieza(Pieza pieza){
-        this.pieza = pieza;
+    public int conseguirY(Casilla[][] arreglo) {
+        int x = 0;
+        for (int i = 0; i < arreglo.length; i++) {
+            for (Casilla casilla : arreglo[i]) {
+                if (this == casilla) {
+                x = i;
+                }
+             }
+        }
+        return x;
     }
     
+    public void ponerPieza(Pieza pieza){   
+        this.pieza = pieza;
+    }
 
-//    public void setPieza(Pieza pieza) {
-//        this.pieza = pieza;
-//    }
     public String toString(){
         String pieza = "";
-           pieza = this.pieza + " ";
+           pieza = "[" + this.pieza + " ] ";
         return pieza;
     }
 }
