@@ -13,8 +13,11 @@ public class Torre extends Pieza {
         int coordenadaFinal = casillaFinal.conseguirX(arreglo);
         int coordenadaFinalDos = casillaFinal.conseguirY(arreglo);
         if((coordenadaInicial == coordenadaFinal && coordenadaInicialDos != coordenadaFinalDos) || (coordenadaFinalDos == coordenadaFinalDos && coordenadaInicial != coordenadaFinal)){
-            this.conseguirMiCasilla(arreglo).moverPieza(casillaFinal);
-        }       
+           this.conseguirMiCasilla(arreglo).moverPieza(casillaFinal);      
+        } 
+        else{
+            throw new IllegalMovException("Upsi, no puedes hacer esto");
+        }
     }
 
     @Override
