@@ -1,13 +1,13 @@
 
-public class Excepciones extends Exception {
+public class ExcepcionesDelJuego extends Exception {
 
     /**
      * Creates a new instance of <code>Excepciones</code> without detail
      * message.
      */
-    public Excepciones() {
+    public ExcepcionesDelJuego() {
     }
-    public Excepciones(String msg) {
+    public ExcepcionesDelJuego(String msg) {
         super(msg);
     }
 }

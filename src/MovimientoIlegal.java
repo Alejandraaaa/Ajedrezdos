@@ -8,9 +8,9 @@
  *
  * @author hp
  */
-public class IllegalMovException extends Exception{
+public class MovimientoIlegal extends Exception{
 
-    public IllegalMovException(String message) {
+    public MovimientoIlegal(String message) {
         super(message);
     }
     

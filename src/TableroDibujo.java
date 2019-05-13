@@ -8,7 +8,7 @@ public class TableroDibujo extends javax.swing.JFrame {
     public TableroDibujo() {
         initComponents();
         setBotones();
-    }
+    }                                  
     public void setBotones(){
         tablero = new JButton[8][8];
         int x = 10;
@@ -16,7 +16,8 @@ public class TableroDibujo extends javax.swing.JFrame {
         for (int i = 0; i < 8; i++) {
             for (int j = 0; j < 8; j++) {
                 tablero[i][j] = new JButton();
-                tablero[i][j].setBackground(java.awt.Color.green);
+//                tablero[i][j].setBackground(java.awt.Color.green);
+//                tablero[i][(j)].setBackground(java.awt.Color.yellow);
                 tablero[i][j].setBounds(x, y, 80, 80);
                 ajedrez.add(tablero[i][j]);
                 y+=80;
@@ -42,6 +43,11 @@ public class TableroDibujo extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         ajedrez.setBackground(new java.awt.Color(0, 0, 0));
+        ajedrez.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ajedrezMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout ajedrezLayout = new javax.swing.GroupLayout(ajedrez);
         ajedrez.setLayout(ajedrezLayout);
@@ -67,6 +73,10 @@ public class TableroDibujo extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void ajedrezMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ajedrezMouseClicked
+
+    }//GEN-LAST:event_ajedrezMouseClicked
 
     /**
      * @param args the command line arguments
