@@ -3,7 +3,20 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/C:/Users/hp/Documents/NetBeansProjects/Ajedrez/src/Caballo.java</file>
+            <file>file:/C:/Users/hp/Documents/NetBeansProjects/Ajedrez/src/TableroDibujo.java</file>
+            <file>file:/C:/Users/hp/Documents/NetBeansProjects/Ajedrez/src/Pieza.java</file>
+            <file>file:/C:/Users/hp/Documents/NetBeansProjects/Ajedrez/src/Casilla.java</file>
+            <file>file:/C:/Users/hp/Documents/NetBeansProjects/Ajedrez/src/Torre.java</file>
             <file>file:/C:/Users/hp/Documents/NetBeansProjects/Ajedrez/src/Tablero.java</file>
+            <file>file:/C:/Users/hp/Documents/NetBeansProjects/Ajedrez/src/Peon.java</file>
+            <file>file:/C:/Users/hp/Documents/NetBeansProjects/Ajedrez/src/PruebaAjedrez.java</file>
+            <file>file:/C:/Users/hp/Documents/NetBeansProjects/Ajedrez/src/ExcepcionesDelJuego.java</file>
+            <file>file:/C:/Users/hp/Documents/NetBeansProjects/Ajedrez/src/Posicion.java</file>
+            <file>file:/C:/Users/hp/Documents/NetBeansProjects/Ajedrez/src/MovimientoIlegal.java</file>
+            <file>file:/C:/Users/hp/Documents/NetBeansProjects/Ajedrez/src/Rey.java</file>
+            <file>file:/C:/Users/hp/Documents/NetBeansProjects/Ajedrez/src/Alfil.java</file>
+            <file>file:/C:/Users/hp/Documents/NetBeansProjects/Ajedrez/src/Dama.java</file>
         </group>
     </open-files>
 </project-private>

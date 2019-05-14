@@ -1,39 +1,25 @@
 public class PruebaAjedrez {
     private Tablero tablero;
     public PruebaAjedrez(){
-    }
-
-    public PruebaAjedrez(String jugada){
-        tablero = new Tablero();
-
-        switch(jugada){
-            case "coronar":
-                 tablero.getTablero() [6][6].setPieza(new Peon());            
-                break;
-                
-            case "torre":
-                 tablero.getTablero() [0][0].setPieza(new Torre());            
-                break;
-            case "rey":
-                tablero.getTablero() [7][7].setPieza(new Rey());
-                break;      
-        }
+        
     }
     
     public Tablero getTablero(){
         return tablero;
     }
-    
     private final void colocarPiezas(){
       //   Poner las piezas negras
-    Torre torreNegra1  = new Torre();
-    Caballo caballoNegro1 = new Caballo();
-    Alfil alfilNegro1 = new Alfil();
-    Dama damaNegra= new Dama();
-    Rey reyNegro = new Rey();
-    Alfil alfilNegro2 = new Alfil();
-    Caballo caballoNegro2 = new Caballo();
-    Torre torreNegra2 = new Torre();
+      
+    Torre torreNegra1  = new Torre(false);
+    Caballo caballoNegro1 = new Caballo(false);
+    Alfil alfilNegro1 = new Alfil(false);
+    Dama damaNegra= new Dama(false);
+    Rey reyNegro = new Rey(false);
+    Alfil alfilNegro2 = new Alfil(false);
+    Caballo caballoNegro2 = new Caballo(false);
+    Torre torreNegra2 = new Torre(false);
+    
+    
     tablero.getTablero()[0][0].setPieza(torreNegra1);
     tablero.getTablero()[0][1].setPieza(caballoNegro1);
     tablero.getTablero()[0][2].setPieza(alfilNegro1);
@@ -43,17 +29,19 @@ public class PruebaAjedrez {
     tablero.getTablero()[0][6].setPieza(caballoNegro2);
     tablero.getTablero()[0][7].setPieza(torreNegra2);
     for(int i=0; i<8; i++)
-        tablero.getTablero()[1][i].setPieza(new Peon());  
+        tablero.getTablero()[1][i].setPieza(new Peon(false));  
     
     // Poner las piezas blancas
-    Torre torreBlanca1  = new Torre();
-    Caballo caballoBlanco1 = new Caballo();
-    Alfil alfilBlanco1 = new Alfil();
-    Dama damaBlanca = new Dama();
-    Rey reyBlanco = new Rey();
-    Alfil alfilBlanco2 = new Alfil();
-    Caballo caballoBlanco2 = new Caballo();
-    Torre torreBlanca2 = new Torre();
+    
+    Torre torreBlanca1  = new Torre(true);
+    Caballo caballoBlanco1 = new Caballo(true);
+    Alfil alfilBlanco1 = new Alfil(true);
+    Dama damaBlanca = new Dama(true);
+    Rey reyBlanco = new Rey(true);
+    Alfil alfilBlanco2 = new Alfil(true);
+    Caballo caballoBlanco2 = new Caballo(true);
+    Torre torreBlanca2 = new Torre(true);
+    
     tablero.getTablero()[7][0].setPieza(torreBlanca1);
     tablero.getTablero()[7][1].setPieza(caballoBlanco1);
     tablero.getTablero()[7][2].setPieza(alfilBlanco1);
@@ -63,20 +51,8 @@ public class PruebaAjedrez {
     tablero.getTablero()[7][6].setPieza(caballoBlanco2);
     tablero.getTablero()[7][7].setPieza(torreBlanca2);
     for(int i=0; i<8; i++)
-        tablero.getTablero()[6][i].setPieza(new Peon());
-        }
-        //setPosicion();
-    
-    
-    public void Posiciones(){
-        for ( int i = 0; i < 8; i++){
-            for (int j = 0; j < 8; j++){
-                System.out.println(tablero.getTablero()[i][j].getPieza());
-               
-            }
+        tablero.getTablero()[6][i].setPieza(new Peon(true));
         }        
-    }
-        
         public void moverPieza(Casilla actual, Casilla alTerminar) throws MovimientoIlegal{
          
             Pieza piezaUno = actual.getPieza();
@@ -91,35 +67,9 @@ public class PruebaAjedrez {
              
                 tablero.getTablero()[posicionDestino.getX()][posicionDestino.getY()].setPieza(piezaUno);
             }
-                  
-           
-////                if(juegoEnJaque(!equipoEnTurno)){
-////                    if(jaqueMate(!equipoEnTurno)){
-////                    //GANA EQUIPOENTURNO
-//                }
-//                else {
-//
-//                    //avisar Jaque (NuevoEquipo EN Turno)
-//                }
-        
-        
-//        private void coronacion(Peon peon){
-//            boolean equipo = peon.isEquipo();
-//            int x = peon.getPosicion().getX();
-//            int y = peon.getPosicion().getY();
-//            if(equipo==false && y==7){
-//                tablero.getCasillas()[x][y].setPieza(new Reina());
-//                tablero.getCasillas() [x][y].getPieza().setEquipo(equipo);
-//            }
-//            if(equipo==true && y==0){
-//                tablero.getCasillas()[x][y].setPieza(new Reina());
-//                tablero.getCasillas() [x][y].getPieza().setEquipo(equipo);
-//            }
-//            tablero.getCasillas()[x][y].getPieza().getPosicion().setPosicion(x, y);
-//        }
  }
         public boolean juegoEnJaque(boolean blanco){
-            Rey rey = new Rey();
+            Rey rey = new Rey(blanco);
             
             for (int i=0; i<8; i++) {
                 for(int j = 0; j<8; j++){
@@ -132,7 +82,7 @@ public class PruebaAjedrez {
                 
             }
               Posicion posicion = rey.getPosicion();
-              boolean[][] piezasContrarias = rey.Negros(tablero);  
+              boolean[][] piezasContrarias = rey.negros(tablero);  
               for(int i=0; i<8; i++){
                   for(int j=0; j<8; j++){
                       if(piezasContrarias[i][j]== true){
@@ -141,10 +91,7 @@ public class PruebaAjedrez {
                              return true;
                       }
                   }
-              }
-              
-            
-            
+              }           
             return false;
         }
         
@@ -169,40 +116,8 @@ public class PruebaAjedrez {
                  
             }
         return true;
-        }
-        
-        public boolean jaqueMate (boolean blanco){
-            Pieza piezaBlanca = new Peon();
-            piezaBlanca.setEsBlanco(blanco);
-            boolean jaqueMate = true;
-            
-            for (int i=0; i<8; i++) {
-                for(int j = 0; j<8; j++){
-                    Pieza pieza = tablero.getTablero()[i][j].getPieza();
-                        if (pieza.isEsBlanco() == blanco)
-                             piezaBlanca = pieza;
-                }
-                
-            }
-            boolean[][] piezasDelEquipo = piezaBlanca.piezasBlancas(tablero);
-            for(int i=0; i<8; i++){
-                for(int j=0; j<8; j++){
-                    if(piezasDelEquipo[i][j]){
-                        Casilla inicial = tablero.getTablero()[i][j];
-                        boolean[][] verificarCasillas = inicial.getPieza().casillasDisponibles(tablero);
-                        for(int a = 0; a < 8; a++){
-                            for(int b = 0; b < 8; b++){
-                                if(verificarCasillas[a][b]){
-                                    Casilla reemplazada = tablero.getTablero()[a][b];
-                                    if(!(jaque(inicial,reemplazada))){
-                                        jaqueMate = false;
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-            return jaqueMate;
-        }
+    }
 }
+
+
+

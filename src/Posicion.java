@@ -1,6 +1,7 @@
 public class Posicion {
     private int x;
     private int y;
+    private Pieza pieza;
     
     public void setPosicion(int x, int y) {
         this.x = x;
@@ -24,7 +25,18 @@ public class Posicion {
     }
 
     void setPieza(Pieza piezaInicial) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+           this.pieza = piezaInicial;
     }
     
 }
+
+//Posicion 
+//<<Constructor>> Posicion(esBlanco : boolean);
+//-x : int 
+//-y : int
+//-pieza : Pieza
+//+setPosicion(int x, int y): void
+//+setX(int x): void
+//+setY(int y): void
+//+getX(): int
+//+getY(): int

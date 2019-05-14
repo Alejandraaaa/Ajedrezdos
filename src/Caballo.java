@@ -21,6 +21,10 @@
 //
 public class Caballo extends Pieza {
 
+    public Caballo(boolean blanco) {
+        super(blanco);
+    }
+
     @Override
     boolean[][] verificarCasillas() {
         boolean [][] arreglo = new boolean [8][8];
@@ -52,15 +56,12 @@ public class Caballo extends Pieza {
     
     @Override
    boolean verificarMovimiento(Posicion posicion, Tablero tablero){
-           //int primerEntradaInicial = getPosicion().getX();
-           //int segundaEntrdadaInicial = getPosicion().getY();
            int primerEntradaFinal = posicion.getX();
            int segundaEntradaFinal = posicion.getY();
          
            
        if(verificarCasillas()[primerEntradaFinal][segundaEntradaFinal] == false)
-           return false;
-       //Revisar este movimiento
+           return false; //Revisar este movimiento
        else
            if (piezasBlancas(tablero)[primerEntradaFinal][segundaEntradaFinal] == this.piezasBlancas(tablero)[primerEntradaFinal][segundaEntradaFinal])
                 return false;
@@ -68,3 +69,10 @@ public class Caballo extends Pieza {
     }
      
 }
+
+//Caballo 
+//
+//<<Constructor>> Caballo(esBlanco : boolean);
+//+verificarCasillas(): booolean[][]
+//+casillasVacias(Posicion posicionNueva, Tablero tablero): boolean[][]
+//+verificarMovimiento(Posicion posicionNueva, Tablero tablero): boolean

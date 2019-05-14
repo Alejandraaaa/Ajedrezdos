@@ -17,6 +17,10 @@
 //    
 //}
 public class Dama extends Pieza {
+
+    public Dama(boolean blanco) {
+        super(blanco);
+    }
    
     @Override
     boolean[][] verificarCasillas() {
@@ -67,9 +71,7 @@ public class Dama extends Pieza {
                    
            return true;
                    
-    }
-    
-    
+    }   
     
     @Override
     boolean verificarMovimiento(Posicion posicion, Tablero tablero){
@@ -91,3 +93,12 @@ public class Dama extends Pieza {
         return true;
     }
 }
+
+
+
+//Dama 
+//
+//<<Constructor>> Dama(esBlanco : boolean);
+//+verificarCasillas(): booolean[][]
+//+casillasVacias(Posicion posicionNueva, Tablero tablero): boolean[][]
+//+verificarMovimiento(Posicion posicionNueva, Tablero tablero) :boolean

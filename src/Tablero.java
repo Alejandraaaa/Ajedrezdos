@@ -102,5 +102,10 @@ public class Tablero {
     }
 }
 
+//Tablero
+//-tablero : Casilla[][] 
+//+Tablero(): void
+//+setCasillas(int x): void
+//+getTablero(): Casilla[][]
     
     

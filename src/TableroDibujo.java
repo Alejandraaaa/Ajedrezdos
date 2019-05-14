@@ -1,33 +1,43 @@
+import java.awt.Color;
 import javax.swing.JButton;
 
 public class TableroDibujo extends javax.swing.JFrame {
-//    int filas = 8;
-//    int columnas = 8;
-    JButton[][] tablero;
+    private int filas =8;
+    private int columnas=8;
+    JButton [][] cuadro;
+   
     
     public TableroDibujo() {
         initComponents();
-        setBotones();
-    }                                  
-    public void setBotones(){
-        tablero = new JButton[8][8];
-        int x = 10;
-        int y = 10;
-        for (int i = 0; i < 8; i++) {
-            for (int j = 0; j < 8; j++) {
-                tablero[i][j] = new JButton();
-//                tablero[i][j].setBackground(java.awt.Color.green);
-//                tablero[i][(j)].setBackground(java.awt.Color.yellow);
-                tablero[i][j].setBounds(x, y, 80, 80);
-                ajedrez.add(tablero[i][j]);
-                y+=80;
-            }
-            x+=80;
-            y=10;
-            
-        }
-                 
+        setMatriz();
     }
+    public void setMatriz(){
+        
+        this.cuadro = new JButton [filas][columnas];
+        
+        int x=10;
+        int y=10;
+        
+        for (int i = 0; i < filas; i++) {
+            for (int j = 0; j < columnas; j++) {
+                this.cuadro [i][j]= new JButton();
+                if((i+j)%2==0){
+                    this.cuadro [i][j].setBackground(Color.white);
+                }else{
+                    this.cuadro [i][j].setBackground(Color.black);
+                }
+                cuadro[i][j].setBounds(x, y, 80, 80);
+                tablero.add(cuadro[i][j]);
+//                
+                x+=80;    
+            }
+            x=10;
+            y+=80;
+        
+   }
+ }
+                 
+   
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -38,25 +48,25 @@ public class TableroDibujo extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        ajedrez = new javax.swing.JPanel();
+        tablero = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        ajedrez.setBackground(new java.awt.Color(0, 0, 0));
-        ajedrez.addMouseListener(new java.awt.event.MouseAdapter() {
+        tablero.setBackground(new java.awt.Color(0, 0, 0));
+        tablero.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                ajedrezMouseClicked(evt);
+                tableroMouseClicked(evt);
             }
         });
 
-        javax.swing.GroupLayout ajedrezLayout = new javax.swing.GroupLayout(ajedrez);
-        ajedrez.setLayout(ajedrezLayout);
-        ajedrezLayout.setHorizontalGroup(
-            ajedrezLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout tableroLayout = new javax.swing.GroupLayout(tablero);
+        tablero.setLayout(tableroLayout);
+        tableroLayout.setHorizontalGroup(
+            tableroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 502, Short.MAX_VALUE)
         );
-        ajedrezLayout.setVerticalGroup(
-            ajedrezLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        tableroLayout.setVerticalGroup(
+            tableroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 502, Short.MAX_VALUE)
         );
 
@@ -64,19 +74,19 @@ public class TableroDibujo extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(ajedrez, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(tablero, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(ajedrez, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(tablero, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void ajedrezMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ajedrezMouseClicked
+    private void tableroMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tableroMouseClicked
 
-    }//GEN-LAST:event_ajedrezMouseClicked
+    }//GEN-LAST:event_tableroMouseClicked
 
     /**
      * @param args the command line arguments
@@ -114,6 +124,6 @@ public class TableroDibujo extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel ajedrez;
+    private javax.swing.JPanel tablero;
     // End of variables declaration//GEN-END:variables
 }

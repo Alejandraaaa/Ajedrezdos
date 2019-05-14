@@ -29,6 +29,10 @@
 //}
 public class Torre extends Pieza {
 
+    public Torre(boolean blanco) {
+        super(blanco);
+    }
+
     @Override
     boolean[][] verificarCasillas() {
         boolean [][] casillas = new boolean [8][8];
@@ -91,3 +95,10 @@ public class Torre extends Pieza {
     }
     
 }
+//Torre
+//
+//
+//<<Constructor>> Torra(esBlanco : boolean);
+//+verificarCasillas(): booolean[][]
+//+casillasVacias(Posicion posicionNueva, Tablero tablero): boolean[][]
+//+verificarMovimiento(Posicion posicionNueva, Tablero tablero) : boolean

@@ -79,10 +79,7 @@
 public abstract class Pieza {
     private Posicion posicion;
     private boolean esBlanco;
-
-    public Pieza(){
-        this(false);        
-    }
+    
     public Pieza(boolean blanco) {
         this.esBlanco = blanco;
         this.posicion = new Posicion();
@@ -101,11 +98,12 @@ public abstract class Pieza {
     }
 
     public void setEsBlanco(boolean blanco) {
-        this.esBlanco= esBlanco;
+        this.esBlanco = blanco;
     }
     
    abstract boolean[][] verificarCasillas();
    abstract boolean verificarMovimiento(Posicion posicion, Tablero tablero);
+   
    
    public boolean [][] piezasBlancas(Tablero tablero){
         boolean [][] blancas = new boolean [8][8];
@@ -118,7 +116,7 @@ public abstract class Pieza {
         return blancas;
     }
    
-   public boolean[][] Negros(Tablero tablero){
+   public boolean[][] negros(Tablero tablero){
         Casilla[][] arreglo = tablero.getTablero();//FaltaImplementar porque Tablero no es atributo de casillas
         boolean [][] negras = new boolean [8][8];
         for(int i = 0; i < 8; i++){
@@ -140,17 +138,6 @@ public abstract class Pieza {
             }
         } 
         
-//        for (int j = 7; j>=0; j--) {
-//            for (int i = 0; i<8; i++) {
-//                if(movimientosPosibles[i][j]){
-//                    System.out.print("|("+i+","+j+")|");
-//                    continue;
-//                }
-//                System.out.print("| |");
-//            }
-//            System.out.println("");
-//        }
-//   
         return casillas;
     }
     
@@ -163,21 +150,7 @@ public abstract class Pieza {
        }
        return false;
    }
-//   public void imprimirPosicionesPosibles(){
-//       boolean [][] posicionesPosibles = posicionesPosibles();
-//                      
-//       for (int j = 7; j>=0; j--) {
-//           for (int i = 0; i<8; i++) {
-//               if(posicionesPosibles[i][j]){
-//                   System.out.print("|("+i+","+j+")|");
-//                   continue;
-//               }
-//               System.out.print("| |");
-//           }
-//           System.out.println("");
-//       }
-//   }
 
-    }
+}
 
 

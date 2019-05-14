@@ -33,6 +33,10 @@
 //    }
 public class Alfil extends Pieza {
 
+    public Alfil(boolean blanco) {
+        super(blanco);
+    }
+
     @Override
     boolean[][] verificarCasillas(){
         boolean [][] posicionesPosibles = new boolean [8][8];
@@ -93,3 +97,12 @@ public class Alfil extends Pieza {
         return true;
     }
 }
+
+
+//Alfil
+//
+//
+//<<Constructor>> Alfil(esBlanco : boolean);
+//+verificarCasillas(): booolean[][]
+//+casillasVacias(Posicion posicionNueva, Tablero tablero): boolean[][]
+//+verificarMovimiento(Posicion posicionNueva, Tablero tablero) : boolean

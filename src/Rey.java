@@ -1,30 +1,8 @@
-//public class Rey extends Pieza{
-//    private boolean estoyEnJaque;
-//    private boolean jaqueMate;
-//
-//    public Rey( boolean blanco, String nombre) {
-//        super(blanco,nombre);
-//    }
-//
-//    public void verificar(){
-//        
-//    }
-//    
-//
-//    
-//    @Override
-//    public void mover() {
-//        
-//    }
-//
-//    @Override
-//    public void verificarMovimiento(Posicion posicion) {
-//        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-//    }
-//
-//    
-//}
 public class Rey extends Pieza {
+
+    public Rey(boolean blanco) {
+        super(blanco);
+    }
 
     @Override
     boolean[][] verificarCasillas() {
@@ -45,8 +23,6 @@ public class Rey extends Pieza {
     
     @Override
      boolean verificarMovimiento(Posicion posicion, Tablero tablero){
-//           int entrada1 = getPosicion().getX();
-//           int entradaFinal1 = getPosicion().getY();
            int entrada2 = posicion.getX();
            int entradaFinal2 = posicion.getY();
          
@@ -61,4 +37,9 @@ public class Rey extends Pieza {
     }
 }
 
-    
+//    Caballo 
+//
+//<<Constructor>> Rey(esBlanco : boolean);
+//+verificarCasillas(): booolean[][]
+//+verificarMovimiento(Posicion posicionNueva, Tablero tablero): boolean
+
